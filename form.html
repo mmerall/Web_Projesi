@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Form Bilgileri</title>
+
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/Design3.css">
+
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="anasayfa.html">Anasayfa</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="Hakkimda.html">Hakkımda</a>
+                    <a class="nav-link" href="özgeçmiş.html">Özgeçmiş</a>
+                    <a class="nav-link" href="İlgiAlanlarim.html">İlgi Alanlarım</a>
+                    <a class="nav-link" href="Şehrim.html">Şehrim </a>
+                    <a class="nav-link" href="Mirasimiz.html">Mirasımız </a>
+                    <a class="nav-link active" aria-current="page" href="iletişim.html">İletişim</a>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <br><br><br>
+        <h2>Form Bilgileri Sayfasına Hoşgeldiniz</h2>
+
+        <br>
+
+        <h4>Ad:</h4>
+        <p id="demo"></p>
+
+        <h4>Soyad:</h4>
+        <p id="demo3"></p>
+
+        <h4>Email:</h4>
+        <p id="demo2"></p>
+
+        <h4>Mesaj:</h4>
+        <p id="demo4"></p>
+
+
+
+
+
+
+
+
+        <script type="text/javascript">
+            function getParameterByName(name, url) {
+                if (!url) url = window.location.href;
+                name = name.replace(/[\[\]]/g, '\\$&');
+                var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                    results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, ' '));
+            }
+
+            var sn = getParameterByName('name');
+            var sm = getParameterByName('surname');
+            var ss = getParameterByName('email');
+            var sk = getParameterByName('message');
+
+            var sq = getParameterByName('accept');
+            var sw = getParameterByName('inlineRadioOptions');
+
+            var x = getParameterByName('select');
+
+            document.write("<h4>Yaşadığı Şehir</h4>")
+            document.write(x);
+
+
+
+            document.getElementById("demo4").innerHTML = sk;
+            document.getElementById("demo2").innerHTML = ss;
+            document.getElementById("demo3").innerHTML = sm;
+            document.getElementById("demo").innerHTML = sn;
+
+
+
+
+            if (sq == "") {
+
+                document.write("<br><br><h4>Haber Almak İstiyorum</h4><br/>");
+                if (sw == "option1") {
+
+                    document.write("<h4>Cinsiyet:</h4>Kadın<br/>");
+
+
+                } else {
+
+                    document.write("<h4>Cinsiyet:</h4>Erkek<br/>")
+
+                }
+
+            } else {
+
+                document.write("<h4>Haber Almak İstemiyorum</h4><br/>");
+
+                if (sw == "option1") {
+
+                    document.write("<h4>Cinsiyet:</h4>Kadın<br/>");
+
+
+                } else {
+
+                    document.write("<h4>Cinsiyet:</h4>Erkek<br/>")
+
+                }
+            }
+        </script>
+
+
+    </div>
+
+
+</body>
+
+</html>
